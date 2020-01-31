@@ -84,16 +84,25 @@ function purchaseAsset(asset) {
     case 'stock':
       totalModifier += stockMod.modifier;
       capital -= stockMod.cost;
+      //upgrade next purchase option
+      stockMod.cost = (stockMod.cost * 1.05) + 3;
+      stockMod.modifier = (stockMod.modifier * 1.03) + .5;
       player.stocks += 1;
       break;
     case 'real estate':
       totalModifier += realestateMod.modifier;
       capital -= realestateMod.cost;
+      //upgrade next purchase option
+      realestateMod.cost = (realestateMod.cost * 1.15) + 4;
+      realestateMod.modifier = (realestateMod.modifier * 1.03) + .5;
       player.realestate += 1;
       break;
     case 'venture':
       totalModifier += ventureMod.modifier;
       capital -= ventureMod.cost;
+      //upgrade next purchase option
+      ventureMod.cost = (ventureMod.cost * 1.21) + 5;
+      ventureMod.modifier = (ventureMod.modifier * 1.03) + .5;
       player.venture += 1;
       break;
     case 'education':
@@ -143,6 +152,8 @@ function drawGame() {
     realestateBtn.disabled = '';
   }
 
+  //draw total mod
+  document.getElementById('total-mod').textContent = totalModifier.toFixed(2).toString();
   //draw players assets and upgrades
   //stocks
   player.stocks > 0 ? stockAssets.innerHTML = `<button class="btn btn-info" title="stock investment | total of $${(player.stocks * stockMod.modifier).toFixed(2)} per second"><i

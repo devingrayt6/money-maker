@@ -16,29 +16,45 @@
 </head>
 
 <body>
-  <header class="bg-light container-fluid">
+  <header class="bg-light container-fluid py-2 mb-3">
     <div class="row">
       <col-6 class="capital">
         <h1>$<span id="capital"></span></h1>
       </col-6>
-      <col-6 class="">Other</col-6>
     </div>
   </header>
-  <main class="container-fluid">
+  <main class="container">
     <div class="row">
-      <div class="col-12 col-md-6">
-        <img src="https://www.financialsamurai.com/wp-content/uploads/2014/12/Money-Lift-350x267.jpg" alt=""
-          class="work-img" id="work-img" onclick="incrementMoney(1)" title="Work for money">
+      <div class="col-12">
+        <h1>Money for Nothing</h1>
       </div>
-      <div class="col-12 col-md-6 border border-primary">
-        <button class="btn btn-info" title="stock investment + $0.50 per second" onclick="purchaseAsset('stock')"><i
-            class="fas fa-chart-line"></i> : $<span id="stock-cost"></span></button>
-        <button class="btn btn-info" title="real estate investment + $0.75 per second"
+      <div class="col-12 col-md-6">
+        <img class="my-3" src="https://www.financialsamurai.com/wp-content/uploads/2014/12/Money-Lift-350x267.jpg"
+          alt="" class="work-img" id="work-img" onclick="clickIncrement()" title="Work for money">
+      </div>
+      <div class="col-12 col-md-6 asset-store">
+        <!-- buy stocks button -->
+        <button class="btn btn-success" id="stock-btn" title="stock investment + $0.50 per second"
+          onclick="purchaseAsset('stock')"><i class="fas fa-chart-line"></i> : $<span id="stock-cost"></span></button>
+        <!-- buy real estate button -->
+        <button class="btn btn-danger" id="realestate-btn" title="real estate investment + $0.75 per second"
           onclick="purchaseAsset('real estate')"><i class="fas fa-building"></i> : $<span
             id="realestate-cost"></span></button>
+        <!-- buy venture investment btn -->
+        <button class="btn btn-dark" id="venture-btn" title="venture capital investment + $1.00 per second"
+          onclick="purchaseAsset('venture')"><i class="fas fa-crown"></i> : $<span id="venture-cost"></span></button>
+        <!-- buy education upgrade -->
+        <button class="btn btn-info" id="education-btn"
+          title="investing in your education makes working more effective + $1.75 per click"
+          onclick="purchaseAsset('education')"><i class="fas fa-graduation-cap"></i> : $<span
+            id="education-cost"></span></button>
       </div>
-      <div class="col-12 border border-primary" id="user-assets">
-
+      <div class="col-12" id="user-assets">
+        <h2 class="my-2">My Assets:</h2>
+        <span id="stock-count"></span>
+        <span id="realestate-count"></span>
+        <span id="venture-count"></span>
+        <span id="education-count"></span>
       </div>
     </div>
   </main>

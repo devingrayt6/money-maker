@@ -1,3 +1,27 @@
+
+
 header .row{
   justify-content: space-between;
+}
+
+header h1{
+  color: green;
+}
+
+button{
+  margin: 0.25rem;
+}
+
+@media screen and (max-width: 780px){
+  header{
+    display: flex;
+    justify-content: center;
+  }
+  .asset-store{
+    display: flex;
+    justify-content: center;
+  }
+  .asset-store button{
+    width: 60%;
+  }
 }

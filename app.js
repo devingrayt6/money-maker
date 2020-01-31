@@ -50,6 +50,11 @@ let stockElem = document.getElementById('stock-cost');
 let ventureElem = document.getElementById('venture-cost');
 let educationElem = document.getElementById('education-cost');
 let realestateElem = document.getElementById('realestate-cost');
+let stockEffect = document.getElementById('stock-effect');
+let ventureEffect = document.getElementById('venture-effect');
+let realestateEffect = document.getElementById('realestate-effect');
+let educationEffect = document.getElementById('education-effect');
+
 let stockAssets = document.getElementById('stock-count');
 let realestateAssets = document.getElementById('realestate-count');
 let ventureAssets = document.getElementById('venture-count');
@@ -148,6 +153,13 @@ function drawGame() {
   player.venture > 0 ? ventureAssets.innerHTML = `<button class="btn btn-info" title="Venture Business investment | total of $${(player.venture * ventureMod.modifier).toFixed(2)} per second"><i class="fas fa-crown"></i> : ${player.venture}</button>` : null;
   //education
   player.education > 0 ? educationAssets.innerHTML = `<button class="btn btn-info" title="Further education | total of $${(player.education * educationMod.modifier).toFixed(2)} per second"><i class="fas fa-graduation-cap"></i> : ${player.education}</button>` : null;
+
+  ///drawing explanations and asset data for mobile
+  if (window.innerWidth <= 780) {
+    stockEffect.textContent = `stock investment | total of $${(player.stocks * stockMod.modifier).toFixed(2)} per second"`;
+    realestateEffect.textContent = `real estate investment | total of $${(player.realestate * realestateMod.modifier).toFixed(2)} per second`;
+    ventureEffect.textContent = `Venture Business investment | total of $${(player.venture * ventureMod.modifier).toFixed(2)} per second`;
+  }
 }
 
 

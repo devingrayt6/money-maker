@@ -12,6 +12,14 @@ button{
   margin: 0.25rem;
 }
 
+.asset-mods{
+  display: 'none';
+}
+
+img{
+  max-width: 100%;
+}
+
 @media screen and (max-width: 780px){
   header{
     display: flex;

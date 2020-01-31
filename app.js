@@ -138,7 +138,7 @@ function drawGame() {
     realestateBtn.disabled = '';
   }
 
-  //draw player assets and upgrades
+  //draw players assets and upgrades
   //stocks
   player.stocks > 0 ? stockAssets.innerHTML = `<button class="btn btn-info" title="stock investment | total of $${(player.stocks * stockMod.modifier).toFixed(2)} per second"><i
   class="fas fa-chart-line"></i> : ${player.stocks}</button>` : null;

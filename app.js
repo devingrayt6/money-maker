@@ -1,4 +1,4 @@
-let capital = 5000;
+let capital = 0;
 let totalModifier = 0;
 let clickModifier = 1;
 

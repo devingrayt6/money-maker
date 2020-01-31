@@ -46,6 +46,7 @@ let educationMod = modifiers[3];
 //targets
 let capitalElem = document.getElementById('capital');
 let stockElem = document.getElementById('stock-cost');
+let realestateElem = document.getElementById('realestate-cost');
 let playerAssets = document.getElementById('user-assets');
 
 //increment money based on modifier (num)
@@ -90,9 +91,14 @@ function drawGame() {
   //update capital
   capitalElem.textContent = capital.toFixed(2).toString();
   //draw asset costs
-  stockElem.textContent = modifiers[0].cost.toFixed(2).toString();
+  stockElem.textContent = stockMod.cost.toFixed(2).toString();
+  realestateElem.textContent = realestateMod.cost.toFixed(2).toString();
   //draw player assets and upgrades
-  playerAssets.textContent = `Stocks: ${player.stocks}`
+  //stocks
+  player.stocks > 0 ? playerAssets.innerHTML = `<button class="btn btn-info" title="stock investment | total of $${player.stocks * stockMod.modifier} per second"><i
+  class="fas fa-chart-line"></i> : ${player.stocks}</button>` : null;
+  //realestate
+  player.realestate > 0 ? playerAssets.innerHTML = `<button class="btn btn-info" title="real estate investment | total of $${player.realestate * realestateMod.modifier} per second"><i class="fas fa-building"></i> : ${player.stocks}</button>` : null;
 }
 
 
